@@ -10,12 +10,15 @@ PRINTF_H_DIR	=	../includes/
 PRINTF_PATH		=	..
 PRINTF			=	$(PRINTF_PATH)/libftprintf.a
 
-MSRCS_FILES		=	mandatory_tests.c
-BSRCS_FILES		=	bonus_tests.c
-CSRCS_FILES		=	custom_tests.c
-MOBJS			=	mandatory_tests.o
-BOBJS			=	bonus_tests.o
-COBJS			=	custom_tests.o
+MSRCS 			=	mandatory_tests
+BSRCS 			= 	bonus_tests
+CSRCS 			=	custom_tests
+MSRCS_FILES		=	$(addsuffix .c, $(MSRCS))
+BSRCS_FILES		=	$(addsuffix .c, $(BSRCS))
+CSRCS_FILES		=	$(addsuffix .c, $(CSRCS))
+MOBJS			=	$(addsuffix .o, $(MSRCS))
+BOBJS			=	$(addsuffix .o, $(BSRCS))
+COBJS			=	$(addsuffix .o, $(CSRCS))
 
 # ---------------------------------- RULES ----------------------------------- #
 
