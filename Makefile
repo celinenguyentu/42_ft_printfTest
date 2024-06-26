@@ -6,20 +6,16 @@ CC				=	cc
 RM				=	rm
 RMFLAGS			=	-rf
 
-HFILES_DIR		=	../includes/
-
-MSRCS			=	mandatory_tests
-BSRCS			=	bonus_tests
-CSRCS			=	custom_tests
-MSRCS_FILES		=	$(addsuffix .c, $(MSRCS))
-BSRCS_FILES		=	$(addsuffix .c, $(BSRCS))
-CSRCS_FILES		=	$(addsuffix .c, $(CSRCS))
-MOBJS			=	$(addsuffix .o, $(MSRCS))
-BOBJS			=	$(addsuffix .o, $(BSRCS))
-COBJS			=	$(addsuffix .o, $(CSRCS))
-
+PRINTF_H_DIR	=	../includes/
 PRINTF_PATH		=	..
 PRINTF			=	$(PRINTF_PATH)/libftprintf.a
+
+MSRCS_FILES		=	mandatory_tests.c
+BSRCS_FILES		=	bonus_tests.c
+CSRCS_FILES		=	custom_tests.c
+MOBJS			=	${MSRCS_FILES:.c=.o}
+BOBJS			=	${BSRCS_FILES:.c=.o}
+COBJS			=	${CSRCS_FILES:.c=.o}
 
 # ---------------------------------- RULES ----------------------------------- #
 
