@@ -23,7 +23,7 @@ COBJS			=	$(addsuffix .o, $(CSRCS))
 # ---------------------------------- RULES ----------------------------------- #
 
 .c.o: 
-				@$(CC) $(CFLAGS) -c -I $(HFILES_DIR) $< -o $@
+				@$(CC) $(CFLAGS) -c -I $(PRINTF_H_DIR) $< -o $@
 
 all:			a
 
@@ -34,17 +34,17 @@ ifneq ("$(wildcard $(PRINTF))","")
 	@$(RM) $(RM_FLAGS) $(PRINTF)
 endif
 				@make -C >/dev/null $(PRINTF_PATH)
-				@$(CC) $(MOBJS) -I $(HFILES_DIR) $(PRINTF) -o $(EXEC) -g
+				@$(CC) $(MOBJS) -I $(PRINTF_H_DIR) $(PRINTF) -o $(EXEC) -g
 				@./$(EXEC)
 
 b:				$(BSRCS_FILES) $(BOBJS)
 				@make -C >/dev/null $(PRINTF_PATH) bonus
-				@$(CC) $(BOBJS) -I $(HFILES_DIR) $(PRINTF) -o $(EXEC) -g
+				@$(CC) $(BOBJS) -I $(PRINTF_H_DIR) $(PRINTF) -o $(EXEC) -g
 				@./$(EXEC)
 
 custom:			$(CSRCS_FILES) $(COBJS)
 				@make -C >/dev/null $(PRINTF_PATH) bonus
-				@$(CC) $(COBJS) -I $(HFILES_DIR) $(PRINTF) -o $(EXEC) -g
+				@$(CC) $(COBJS) -I $(PRINTF_H_DIR) $(PRINTF) -o $(EXEC) -g
 				@./$(EXEC)
 
 clean:
