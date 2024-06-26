@@ -13,9 +13,9 @@ PRINTF			=	$(PRINTF_PATH)/libftprintf.a
 MSRCS_FILES		=	mandatory_tests.c
 BSRCS_FILES		=	bonus_tests.c
 CSRCS_FILES		=	custom_tests.c
-MOBJS			=	${MSRCS_FILES:.c=.o}
-BOBJS			=	${BSRCS_FILES:.c=.o}
-COBJS			=	${CSRCS_FILES:.c=.o}
+MOBJS			=	mandatory_tests.o
+BOBJS			=	bonus_tests.o
+COBJS			=	custom_tests.o
 
 # ---------------------------------- RULES ----------------------------------- #
 
